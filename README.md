@@ -1,4 +1,4 @@
-# Airbnb Dynamic Pricing Engine (CDMX)
+# Airbnb Pricing (CDMX)
 
 Una aplicación de Machine Learning Full-Stack diseñada para estimar dinámicamente el precio óptimo por noche de propiedades de Airbnb en la Ciudad de México. 
 
@@ -12,7 +12,7 @@ El sistema está construido bajo una arquitectura de microservicios contenerizad
 * **Backend:** FastAPI (API RESTful de alto rendimiento con validación estricta de esquemas vía Pydantic).
 * **Base de Datos:** PostgreSQL (Almacenamiento persistente del historial de predicciones vía SQLAlchemy).
 * **Machine Learning:** Pipeline de Scikit-Learn + XGBoost Regressor (con transformación logarítmica de la variable objetivo).
-* **Infraestructura:** Docker & Docker Compose (Optimizado con multi-stage builds e imágenes distroless/slim para despliegue en la nube).
+* **Infraestructura:** Docker & Docker Compose.
 
 ## Pipeline de Machine Learning
 
@@ -71,10 +71,3 @@ docker-compose up --build -d
 - Frontend (Streamlit): `http://localhost:8501`
 - Backend API Docs (Swagger): `http://localhost:8000/docs`
 - Base de Datos: Puerto `5432` (Accesible vía DBeaver o pgAdmin)
-
-## Trabajo Futuro y Escalabilidad
-
-El proyecto está diseñado con principios Cloud-Native. Los próximos pasos para un entorno de producción incluyen:
-* Migrar la base de datos a **Google Cloud SQL**.
-* Desplegar las imágenes optimizadas de Backend y Frontend en **Google Cloud Run** para auto-escalamiento.
-* Implementar un pipeline CI/CD con GitHub Actions para reentrenar el modelo periódicamente.
