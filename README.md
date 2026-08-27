@@ -48,8 +48,8 @@ Para levantar toda la arquitectura de manera local usando Docker:
 
 1. **Clonar el repositorio:**
 ```bash
-git clone <URL_DE_TU_REPOSITORIO>
-cd <NOMBRE_DEL_DIRECTORIO>
+git clone https://github.com/Yokai-Chz/Airbnb_pricing.git
+cd Airbnb_pricing
 ```
 
 2. **Configurar Variables de Entorno:**
