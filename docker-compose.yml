@@ -1,0 +1,34 @@
+services:
+  db:
+    image: postgres:15.19-alpine3.23
+    container_name: airbnb_postgres
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: airbnb_fastapi
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+  frontend:
+    build: ./frontend # Busca el Dockerfile dentro de la carpeta frontend/
+    container_name: airbnb_streamlit
+    restart: always
+    ports:
+      - "8501:8501" # El puerto por defecto de Streamlit
+    depends_on:
+      - api
+    env_file:
+      - .env
+volumes:
+  postgres_data:
