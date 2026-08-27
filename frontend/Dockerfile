@@ -4,10 +4,12 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Instalar las librerías necesarias para la vista
-RUN pip install --no-cache-dir streamlit requests
+RUN pip install --no-cache-dir streamlit requests pandas plotly
 
 # Copiar el código del frontend
-COPY app.py .
+COPY frontend/app.py .
+
+COPY data/ ./data/
 
 # Exponer el puerto de Streamlit
 EXPOSE 8501

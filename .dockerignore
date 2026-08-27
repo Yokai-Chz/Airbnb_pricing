@@ -1,0 +1,20 @@
+# Entornos virtuales locales
+venv/
+env/
+.venv/
+
+# Caché de Python (Evita conflictos entre tu máquina y el contenedor)
+__pycache__/
+*.pyc
+*.pyo
+
+# Análisis exploratorio (No se necesita en producción)
+notebooks/
+*.ipynb
+
+# Git y credenciales (Seguridad fundamental)
+.git/
+.env
+
+# Ignorar la carpeta del frontend al construir el backend
+frontend/

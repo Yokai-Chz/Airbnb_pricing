@@ -21,7 +21,9 @@ services:
     env_file:
       - .env
   frontend:
-    build: ./frontend # Busca el Dockerfile dentro de la carpeta frontend/
+    build: 
+      context: .
+      dockerfile: frontend/Dockerfile
     container_name: airbnb_streamlit
     restart: always
     ports:
