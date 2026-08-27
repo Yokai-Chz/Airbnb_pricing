@@ -15,6 +15,3 @@ notebooks/
 # Git y credenciales (Seguridad fundamental)
 .git/
 .env
-
-# Ignorar la carpeta del frontend al construir el backend
-frontend/
